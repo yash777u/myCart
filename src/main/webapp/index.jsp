@@ -86,5 +86,6 @@
                     <h1>JSP Connectivity</h1>
         <% out.println(FactoryProvider.getFactory());%>   -->           <%-- ____________ Session Factory for Hibernate __________ --%>
         <%@include file="components/common_modals.jsp" %>
+        <%@include file="components/footer.jsp" %> <%-- Navigation Bard called here --%>
     </body>
 </html>

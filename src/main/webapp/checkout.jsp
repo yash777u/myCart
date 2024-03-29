@@ -81,5 +81,7 @@
                 </div>
             </div>
         </div>
+        
+        <%@include file="components/footer.jsp" %> <%-- Navigation Bard called here --%>
     </body>
 </html>

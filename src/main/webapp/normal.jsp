@@ -25,6 +25,7 @@
     </head>
     <body>
         <%@include file="components/navbar.jsp" %>
-        <h1>This is Normal user panel</h1>
+        <h1>This is Normal user panel</h1><%@include file="components/footer.jsp" %> <%-- Footer called here --%>
+        
     </body>
 </html>

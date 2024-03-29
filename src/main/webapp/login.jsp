@@ -13,15 +13,15 @@
             <div class="row">                                               <%-- ********* Row class here ************--%>
                 <div class="col-md-4 offset-md-4">
                     <div class="card mt-3">                                     <%-- Card Starts here --%>
-        
+
                         <div class="card-header custom-bg text-white ">
                             <h3> Login Here </h3>                               <%-- Card Header  --%>
                         </div>
-  
+
                         <div class="card-body">                                 <%-- _____Card body_____ --%>
 
                             <%@include file="components/message.jsp" %>         <%-- Message is displayed or called at this place --%>
-                            
+
                             <form action="LoginServlet" method="post">          <%-- ________Form Starts Here_____________ --%>
                                 <div class="form-group">
 
@@ -38,7 +38,7 @@
                                     <%-- +++++++ Submit and Reset Button Present here ++++++ --%>
                                     <button type="submit" class="btn btn-primary custom-bg text-white border-0">Submit</button>
                                     <button type="reset" class="btn btn-primary custom-bg text-white border-0">Reset</button><br>
-                                    
+
                                     <%-- ...... Redirect to register.jsp ,,,,,,,, --%>
                                     <a href="register.jsp" class="mb-15">if not registered click here !!</a> <br>
 
@@ -51,5 +51,7 @@
                 </div>
             </div>
         </div>
+
+        
     </body>
 </html>

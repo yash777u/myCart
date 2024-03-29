@@ -7,7 +7,7 @@
 <!-- _________It Checks and retain the user session here__________ -->
 
 <%
-    User user = (User) session.getAttribute("current-user");    
+    User user = (User) session.getAttribute("current-user");
 
     if (user == null) {
         session.setAttribute("email", "You're Not logged In");
@@ -166,65 +166,63 @@
                     </div>
                     <div class="modal-body">
                         <form action="ProductOperationServlet" method="post" enctype="multipart/form-data" >
-                            
+
                             <input type="hidden" name="operation" value="addproduct" />
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Enter Titile of Product" name="pName" required />
                             </div>
-                            
+
                             <div class="form-group">
                                 <input type="text" class="form-control" style="padding-bottom: 40px" placeholder="Enter Description of Product" name="pDesc" required />
                             </div>
-                            
+
                             <div class="form-group">
                                 <input type="number" class="form-control" placeholder="Enter Product Price" name="pPrice" required /> 
                             </div>
-                            
+
                             <div class="form-group">
                                 <input type="number" class="form-control" placeholder="Enter Product Discount" name="pDiscount" required /> 
                             </div>
-                            
+
                             <div class="form-group">
                                 <input type="number" class="form-control" placeholder="Enter Product Quantity" name="pQuantity" required /> 
                             </div>
-                            
+
                             <!-- *********** Loading the Categories into a list after getting it from Database into a List of Type Categories  ************ -->
-                            
-                            <% 
-                                      CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
-                                      List<Category> list = cdao.getCategories();
+
+                            <%                                CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+                                List<Category> list = cdao.getCategories();
                             %>
                             <div class="form-group">
                                 <select name="catId" class="form-control" id="">
-                                    
+
                                     <!-- ******* +++++ Starting a Loop and then showing it one by one in categories (Drop Down option) ++++ ******** -->
-                                   
-                                    <% for(Category c:list)
-                                   {%>
-                                    
-                                    <option value=" <%= c.getCategoryId() %> "> <%= c.getCategoryTitle() %>  </option>
-                                    <% } %>
+
+                                    <% for (Category c : list) {%>
+
+                                    <option value=" <%= c.getCategoryId()%> "> <%= c.getCategoryTitle()%>  </option>
+                                    <% }%>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="pPic">Enter Picture of Product</label>                                      <!-- ******* ++++++++++++++++++ Upload the Picture of Product ++++++++++++++++++ ******** -->
                                 <input type="file" id="pPic"  name="pPic" required />
                             </div>
                             <div class="container text-center">
-                                  <button type="submit" class="btn mt-2 btn-outline-success">Save changes</button>
+                                <button type="submit" class="btn mt-2 btn-outline-success">Save changes</button>
                             </div>
                         </form>
-                        
+
                     </div>
                     <div class="modal-footer">
 
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-               
+
                     </div>
                 </div>
             </div>
         </div>
-
+        <%@include file="components/footer.jsp" %> <%-- Footer called here --%>
     </body>
 </html>
