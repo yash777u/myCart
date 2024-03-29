@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    updateCart()
-})
-
+    updateCart();
+});
 
 // update cart function
 function updateCart() {
@@ -13,7 +12,7 @@ function updateCart() {
         console.log("Cart is Empty !!!");
         $(".cart-items").html("( 0 )");
         $(".cart-body").html("<h3> Cart Empty </h3>");
-        $(".checkout-btn").addClass('disabled');
+        $(".checkout-btn").prop('disabled', true); // Disable the button when cart is empty
     } else {
         // there is something in cart to show 
 
@@ -57,8 +56,7 @@ function updateCart() {
         $(".cart-body").html(table);
         console.log("Cart Getting Updated --------------------------");
         console.log(localStorage.getItem('cart'));
-
-
+        $(".checkout-btn").prop('disabled', false); // Enable the button when cart is not empty
     }
 }
 
@@ -137,3 +135,6 @@ function delete_Item(pid) {
     updateCart(); // Update the cart display after item removal
 }
 
+function checkout() {
+    window.location = "checkout.jsp";
+}
